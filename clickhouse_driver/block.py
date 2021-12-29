@@ -161,7 +161,7 @@ class RowOrientedBlock(BaseBlock):
             if check_row_type:
                 check_row_type(row)
 
-            data[i] = [row[name] for name in column_names]
+            data[i] = [row.get(name, "") for name in column_names]
 
     def _check_rows(self, data):
         expected_row_len = len(self.columns_with_types)
